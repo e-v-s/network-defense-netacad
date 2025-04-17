@@ -2,11 +2,12 @@
 things to note/study/memorize
 
 ### [System & Network Defense](#system-network-defense)
+#### [Application Security](#app-sec)
+#### [Network Security](#net-sec)
 
 <h1 id="system-network-defense">System & Network Defense</h1>
 
-
-## Application Security
+<h2 id="app-sec">Application Security</h2>
 
 - Application Development
 
@@ -47,4 +48,11 @@ things to note/study/memorize
   4. Unauthorized access to systems: <mark>MFA</mark> and <mark>monitoring</mark>
   5. Data loss: backup procedures and data classification stds
   6. Software development vulnerabilities: test it
+
+
+<h2 id="net-sec">Network Security</h2>
+
+- Network and Routing Services: use a port scanner to detect open ports
   
+
+
