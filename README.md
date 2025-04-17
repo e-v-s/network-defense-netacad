@@ -1,9 +1,9 @@
 # network-defense-netacad
 things to note/study/memorize
 
-### [System & Network Defense](part-1)
+### [System & Network Defense](system-&-network-defense)
 
-# [System & Network Defense]:part-1
+# System & Network Defense
 
 ## Application Security
 
