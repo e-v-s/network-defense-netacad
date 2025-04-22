@@ -5,6 +5,7 @@ things to note/study/memorize
 #### [Application Security](#app-sec)
 #### [Network Hardening: Services and Protocols](#net-hardening-services)
 #### [Network Hardening: Segmentation](#net-hardening-segmentation)
+#### [Hardening Wifi & Mobile Devices: Segmentation](#hardening-wifi)
 
 <h1 id="system-network-defense">System & Network Defense</h1>
 
@@ -143,9 +144,32 @@ Network between trusted and untrusted network.
 | web servers | 
 | mail servers |
 
-| Level of Risk | Zones |
-| --- | --- |
-| Between 2 ~4 | | 
+| Level of Risk | Zones         |
+| ------------- | ------------- |
+| low           | LAN zone      |
+| medium-low    | extranet zone |
+| medium-high   | DMZ           |
+| high          | internet      |
+
+- Zero trust model
+
+  Firewalls manage east-west traffic --> between servers inside de DC and north-south traffic --> data in/out the network
+
+  **Monitoring ALL users inside the network regardless of their status/role**
+
+  - Unauthorized access to systems, applications and data --> Define strict access control stuff
+
+  - Unauthorized LAN access --> Securing wiring closets, data centers and computer rooms. deny access to anyone without proper credentials
+
+  - Exploits of data in transit --> encryption
+  - Network OS vulnerabilities --> patching
+  - Unauthorized access by rogue users --> Require passphrases or authentication for wifi
+  - Unauthorized network probing and port scanning --> conduct post-config pentest
+
+
+<h2 id="hardening-wifi">Hardening Wifi & Mobile Devices</h2>
+
+
 
 
 
