@@ -137,9 +137,19 @@ things to note/study/memorize
 <h3>DMZ</h3>
 Network between trusted and untrusted network.
 
-- INSIDE
-  -- web servers
-  -- Mail servers
+| INSIDE | 
+| ------------- |
+| Allows access to an unstrusted network, without compromising the internal network | 
+| web servers | 
+| mail servers |
+
+| Level of Risk | Zones |
+| --- | --- |
+| Between 2 ~4 | | 
+
+
+
+
   
 
 
