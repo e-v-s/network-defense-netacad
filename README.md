@@ -3,7 +3,7 @@ things to note/study/memorize
 
 ### [System & Network Defense](#system-network-defense)
 #### [Application Security](#app-sec)
-#### [Network Security](#net-sec)
+#### [Network Security](#net-sec-serv)
 
 <h1 id="system-network-defense">System & Network Defense</h1>
 
@@ -50,9 +50,76 @@ things to note/study/memorize
   6. Software development vulnerabilities: test it
 
 
-<h2 id="net-sec">Network Security</h2>
+<h2 id="net-sec-serv">Network Security Services and Protocols</h2>
 
-- Network and Routing Services: use a port scanner to detect open ports
+<h3>Network and Routing Services: use a port scanner to detect open ports</h3>
+
+  *only necessary ports must be exposed*
+
+- DHCP **it's a server that assigns IP addresses and other config info to network devices**:
+
+   [ ] Physically secure it
+  
+   [ ] Patching
+  
+   [ ] Put it behind a firewall
+  
+   [ ] Monitor it and review logs
+  
+   [ ] Antivirus
+  
+   [ ] Hardening
+  
+   [ ] Close unused ports
+
+- DNS **translates url into an IP address**:
+
+  [ ] Use DNSSEC
+
+  [ ] Patching
+
+  [ ] Prevent version string
+
+  [ ] Separate internal and external DNS servers
+
+  [ ] Restrict allowed transactions by client IP
+
+  [ ] Disable/restrict zone transfers and dynamic updates as much as possible
+
+  [ ] Monitor it and review logs
+
+  [ ] Sign zones
+
+- ICMP **protocol is used to send error messages, it's used by ping**
+
+  [ ] Network filtering of ICMP requests
+
+- RIP **limits the number of hops from src to destination that are allowed in a network path**, it calculates the best route based on the hop count.
+
+  [ ] Patching
+
+  [ ] Athentication
+
+- NTP **syncs the network computer system clocks**, it is used by hackers to disrupt secure communication thast depends on digital certificates and to hide attack info.
+
+  [ ] Use NTP authentication to verify if the server is trusted
+
+
+<h3>Telnet, SSH & SCP</h3>
+
+- Telnet -TCP 23: old protocol, **no encryption*, uses plaintext when authenticating a device and transmitting data;
+- SSH -TCP 22: **encrypted** authentication and communication for **remote connection to a device**;
+- SCP: **secure file transfer** between devices. It **uses ssh**.
+
+<h3>Secure Protocols</h3>
+
+- SNMPv3: collects statistics from TCP/IP devices to monitor network and devices. Prevents **eavesdropping** and **tampering** on data transiting (confidentiality and integrity);
+- HTTP 80: use **SSL/TLS** --> HTTPS --> encryption of the communication between client and server;
+- FTP: transfers files between client-server, it's **plantext** --> **FTPS** uses SSL/TLS
+- POP 110 | IMAP 143 | MIME: the first 2 are insecure, you have to use SSL/TLS. MIME is secure and provides integrity, authentication and nonrepudiation via digital signatures and message encryption.
+
+<
+  
   
 
 
