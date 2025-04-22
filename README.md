@@ -168,7 +168,10 @@ Network between trusted and untrusted network.
 
 
 <h2 id="hardening-wifi">Hardening Wifi & Mobile Devices</h2>
+<h3>Wifi Security</h3>
 
+- Evolution of WPA
+  1. WPA is the evolution of WEP. It provides **message integrity checks** (MIC)
 
 
 
