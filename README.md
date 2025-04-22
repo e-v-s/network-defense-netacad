@@ -3,7 +3,8 @@ things to note/study/memorize
 
 ### [System & Network Defense](#system-network-defense)
 #### [Application Security](#app-sec)
-#### [Network Security](#net-sec-serv)
+#### [Network Hardening: Services and Protocols](#net-hardening-services)
+#### [Network Hardening: Segmentation](#net-hardening-segmentation)
 
 <h1 id="system-network-defense">System & Network Defense</h1>
 
@@ -50,7 +51,7 @@ things to note/study/memorize
   6. Software development vulnerabilities: test it
 
 
-<h2 id="net-sec-serv">Network Security Services and Protocols</h2>
+<h2 id="net-hardening-services">Network Hardening: Services and Protocols</h2>
 
 <h3>Network and Routing Services: use a port scanner to detect open ports</h3>
 
@@ -118,8 +119,27 @@ things to note/study/memorize
 - FTP: transfers files between client-server, it's **plantext** --> **FTPS** uses SSL/TLS
 - POP 110 | IMAP 143 | MIME: the first 2 are insecure, you have to use SSL/TLS. MIME is secure and provides integrity, authentication and nonrepudiation via digital signatures and message encryption.
 
-<
-  
+<h2 id="net-hardening-segmentation">Network Hardening: Segmentation</h2>
+
+<h3>VLANs</h3>
+
+- Group devices (logically) into small sections of your LAN
+- Individual ports on a switch is assigned to a specific VLAN
+- Another port can interconnect switches to provide communication between VLANs --> **trunk ports**
+- Independent network even tho they're sharing an infra with other VLANs
+- **Limits broadcast traffic in a switched network**
+- It must be secured by:
+
+  a. monitoring its performance
+  b. patching
+  c. advanced configurations
+
+<h3>DMZ</h3>
+Network between trusted and untrusted network.
+
+- INSIDE
+  -- web servers
+  -- Mail servers
   
 
 
