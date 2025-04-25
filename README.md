@@ -6,6 +6,7 @@ things to note/study/memorize
 #### [Network Hardening: Services and Protocols](#net-hardening-services)
 #### [Network Hardening: Segmentation](#net-hardening-segmentation)
 #### [Hardening Wifi & Mobile Devices: Segmentation](#hardening-wifi)
+#### [Cybersec Resilience](#resiliene)
 
 <h1 id="system-network-defense">System & Network Defense</h1>
 
@@ -239,9 +240,19 @@ Network between trusted and untrusted network.
 <h4>Mutual Authentication</h4>
 
 <ul>
-<li>Prevent rogue access points with **mutual authentication**</li>
+<li>Prevent rogue access points with <b>mutual authentication</b></li>
 </ul>
 
+<h4>Communication Methods</h4>
+
+<ul>
+<li>Wifi & bluetooth</li>
+<li>NFC</li>
+<li>IR</li>
+<li>USB</li>
+</ul>
+
+<h2 id="resilience">Cybersec Resilience</h2>
 
 
 
