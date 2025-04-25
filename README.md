@@ -254,6 +254,16 @@ Network between trusted and untrusted network.
 
 <h2 id="resilience">Cybersec Resilience</h2>
 
+<h3>High Availability</h3>
+
+<ul>
+<li>Eliminate <b>single points of failure</b></li>
+<li>Redundant stuff --> reliable crossover</li>
+<li>Active device and system monitoring</li>
+</ul>
+
+<h3>The Five 9s</h3>
+
 
 
 
