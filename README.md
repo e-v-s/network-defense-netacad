@@ -171,7 +171,82 @@ Network between trusted and untrusted network.
 <h3>Wifi Security</h3>
 
 - Evolution of WPA
-  1. WPA is the evolution of WEP. It provides **message integrity checks** (MIC)
+  1. WPA is the evolution of WEP
+<ul>
+<li>It provides **message integrity checks** (MIC) --> can detect if the data is altered.</li>
+<li>It uses **temporary key integrity protocol** (TKIP) --> key management and encryption protection</li>
+</ul>
+
+  2. WPA2
+<ul>
+<li>Mandatory use of AES and replaced TKIP with CCMP</li>
+</ul>
+
+  3. WPA3
+     
+  4. WPS: do NOT use this
+
+<h3>Packet Tracer: Hardening</h3>
+
+<ul>
+<li><b>Part 1:</b> Configure Basic Security Settings for a Wireless Router</li>
+<ul>
+<li>Change router's default admin password</li>
+<li>Disable remote management</li>
+</ul>
+<li><b>Part 2:</b> Configure Wireless Router Network Security</li>
+<ul>
+<li>Enable SSID broadcast</li>
+<li>Change the SSID name</li>
+<li>Security mode: WPA2 Personal</li>
+<li>Encryption: AES</li>
+<li>Enable guest profile, do the same: WPA2 Personal and AES</li>
+</ul>
+<li><b>Part 3:</b> Configure Wireless Clients Network Security</li>
+<ul>
+<li>Connect to the wifi on the clients</li>
+<li>DHCP</li>
+<li>configure the IoT devices</li>
+</ul>
+<li><b>Part 4:</b> Verify Connectivity and Security Settings</li>
+<ul>
+<li>Test internet connectivity on the browser</li>
+<li>Secure interconnectivity between default & guest by disabling (on router level) the access netween them</li>
+</ul>
+</ul>
+
+<h3>Authentication</h3>
+
+<h4>Types:</h4>
+<ul>
+<li>Open system authentication (less secure)</li>
+<li>Shared key authentication (more secure)</li>
+</ul>
+
+<h4>Protocols:</h4>
+<ul>
+<li>Extensible Authentication Protocol (EAP)</li>
+
+|                    | EAP-TLS | PEAP   | EAP-TTLS | EAP-FAST |
+| ------------------ | ------- | ------ | -------- | -------- |
+| Client Cert?       | yes     | no     | no       | no       |
+| Server Cert?       | yes     | yes    | yes      | no       |
+| Easy do implement? | hard    | medium | medium   | easy     |
+| Security           | high    | medium | medium   | medium   |
+
+</ul>
+
+<h4>Mutual Authentication</h4>
+
+<ul>
+<li>Prevent rogue access points with **mutual authentication**</li>
+</ul>
+
+
+
+
+
+
 
 
 
