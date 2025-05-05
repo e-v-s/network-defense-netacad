@@ -1,16 +1,32 @@
 # network-defense-netacad
 things to note/study/memorize
 
-### [System & Network Defense](#system-network-defense)
-#### [Application Security](#app-sec)
-#### [Network Hardening: Services and Protocols](#net-hardening-services)
-#### [Network Hardening: Segmentation](#net-hardening-segmentation)
-#### [Hardening Wifi & Mobile Devices: Segmentation](#hardening-wifi)
-#### [Cybersec Resilience](#resiliene)
+- [network-defense-netacad](#network-defense-netacad)
+- [System \& Network Defense](#system--network-defense)
+  - [Application Security](#application-security)
+  - [Network Hardening: Services and Protocols](#network-hardening-services-and-protocols)
+    - [Network and Routing Services: use a port scanner to detect open ports](#network-and-routing-services-use-a-port-scanner-to-detect-open-ports)
+    - [Telnet, SSH \& SCP](#telnet-ssh--scp)
+    - [Secure Protocols](#secure-protocols)
+  - [Network Hardening: Segmentation](#network-hardening-segmentation)
+    - [VLANs](#vlans)
+    - [DMZ](#dmz)
+  - [Hardening Wifi \& Mobile Devices](#hardening-wifi--mobile-devices)
+    - [Wifi Security](#wifi-security)
+    - [Packet Tracer: Hardening](#packet-tracer-hardening)
+    - [Authentication](#authentication)
+      - [Types:](#types)
+      - [Protocols:](#protocols)
+      - [Mutual Authentication](#mutual-authentication)
+      - [Communication Methods](#communication-methods)
+  - [Cybersec Resilience](#cybersec-resilience)
+    - [High Availability](#high-availability)
+    - [The Five 9s](#the-five-9s)
 
-<h1 id="system-network-defense">System & Network Defense</h1>
 
-<h2 id="app-sec">Application Security</h2>
+# System & Network Defense
+
+## Application Security
 
 - Application Development
 
@@ -21,7 +37,7 @@ things to note/study/memorize
   Provisioning & Deprovisioning --> Automate both
 
 - Security Coding Techniques
-  1. Normalization --> Converts an <mark>input str</mark> into <mark>binary</mark>. It allows malware input to be identified --> **Integrity**
+  1. Normalization --> Converts an `input str` into `binary`. It allows malware input to be identified --> **Integrity**
   2. Stored procedute --> Use precompiled SQL statements to work on user inputs, it reduces network traffic --> faster results
   3. Obfuscation and camouflage --> Both are used to prevent softwares being reverse engineered. How? **Obfuscation** hides data with random stuff, **camouflage** replaces sensitive data with realistic fictional data
   4. Code reuse --> Pay attention to code reuse, as it can reintroduce vulnerabilities to new code
@@ -33,11 +49,11 @@ things to note/study/memorize
 
   Avoids insertion of data --> **Integrity**
   
-  Use **validation rules** to every data entry so it matches the parameters defined by the DB designer --> <mark>size</mark>, <mark>format</mark>, <mark>consistency</mark>, <mark>range</mark> and <mark>check digit for error detection</mark>.
+  Use **validation rules** to every data entry so it matches the parameters defined by the DB designer --> `size`, `format`, `consistency`, `range` and `check digit for error detection`.
 
 - Integrity Checks
 
-  Measures consistencies, verifies integrity against a snapshot. It uses **hash functions** --> <mark>checksum</mark>.
+  Measures consistencies, verifies integrity against a snapshot. It uses **hash functions** --> `checksum`.
   a. checksum
   b. hash functions --> MD5, SHA-1, SHA-256 and SHA-512
   c. versioning
@@ -45,17 +61,17 @@ things to note/study/memorize
   e. authorization --> confidentiality
 
 - Countermeasures
-  1. Unauthorarized access to physical stuff: <mark>policies/stds/procedures</mark>
-  2. Servers and system downtime: <mark>business continuity plan</mark> and <mark>DR plan</mark>
-  3. Network OS vulnerability: <mark>policies for patching</mark> and the <mark>patching</mark> itself
-  4. Unauthorized access to systems: <mark>MFA</mark> and <mark>monitoring</mark>
+  1. Unauthorarized access to physical stuff: `policies/stds/procedures`
+  2. Servers and system downtime: `business continuity plan` and `DR plan`
+  3. Network OS vulnerability: `policies for patching` and the `patching` itself
+  4. Unauthorized access to systems: `MFA` and `monitoring`
   5. Data loss: backup procedures and data classification stds
   6. Software development vulnerabilities: test it
 
 
-<h2 id="net-hardening-services">Network Hardening: Services and Protocols</h2>
+## Network Hardening: Services and Protocols
 
-<h3>Network and Routing Services: use a port scanner to detect open ports</h3>
+### Network and Routing Services: use a port scanner to detect open ports
 
   *only necessary ports must be exposed*
 
@@ -108,22 +124,22 @@ things to note/study/memorize
   [ ] Use NTP authentication to verify if the server is trusted
 
 
-<h3>Telnet, SSH & SCP</h3>
+### Telnet, SSH & SCP
 
 - Telnet -TCP 23: old protocol, **no encryption*, uses plaintext when authenticating a device and transmitting data;
 - SSH -TCP 22: **encrypted** authentication and communication for **remote connection to a device**;
 - SCP: **secure file transfer** between devices. It **uses ssh**.
 
-<h3>Secure Protocols</h3>
+### Secure Protocols
 
 - SNMPv3: collects statistics from TCP/IP devices to monitor network and devices. Prevents **eavesdropping** and **tampering** on data transiting (confidentiality and integrity);
 - HTTP 80: use **SSL/TLS** --> HTTPS --> encryption of the communication between client and server;
 - FTP: transfers files between client-server, it's **plantext** --> **FTPS** uses SSL/TLS
 - POP 110 | IMAP 143 | MIME: the first 2 are insecure, you have to use SSL/TLS. MIME is secure and provides integrity, authentication and nonrepudiation via digital signatures and message encryption.
 
-<h2 id="net-hardening-segmentation">Network Hardening: Segmentation</h2>
+## Network Hardening: Segmentation
 
-<h3>VLANs</h3>
+### VLANs
 
 - Group devices (logically) into small sections of your LAN
 - Individual ports on a switch is assigned to a specific VLAN
@@ -136,7 +152,7 @@ things to note/study/memorize
   b. patching
   c. advanced configurations
 
-<h3>DMZ</h3>
+### DMZ
 Network between trusted and untrusted network.
 
 | INSIDE | 
@@ -168,65 +184,64 @@ Network between trusted and untrusted network.
   - Unauthorized network probing and port scanning --> conduct post-config pentest
 
 
-<h2 id="hardening-wifi">Hardening Wifi & Mobile Devices</h2>
-<h3>Wifi Security</h3>
+## Hardening Wifi & Mobile Devices
+
+### Wifi Security
 
 - Evolution of WPA
   1. WPA is the evolution of WEP
-<ul>
-<li>It provides **message integrity checks** (MIC) --> can detect if the data is altered.</li>
-<li>It uses **temporary key integrity protocol** (TKIP) --> key management and encryption protection</li>
-</ul>
+
+    - It provides **message integrity checks** (MIC) --> can detect if the data is altered.
+    - It uses **temporary key integrity protocol** (TKIP) --> key management and encryption protection
 
   2. WPA2
-<ul>
-<li>Mandatory use of AES and replaced TKIP with CCMP</li>
-</ul>
+
+    - Mandatory use of AES and replaced TKIP with CCMP
+
 
   3. WPA3
      
   4. WPS: do NOT use this
 
-<h3>Packet Tracer: Hardening</h3>
+### Packet Tracer: Hardening
 
-<ul>
-<li><b>Part 1:</b> Configure Basic Security Settings for a Wireless Router</li>
-<ul>
-<li>Change router's default admin password</li>
-<li>Disable remote management</li>
-</ul>
-<li><b>Part 2:</b> Configure Wireless Router Network Security</li>
-<ul>
-<li>Enable SSID broadcast</li>
-<li>Change the SSID name</li>
-<li>Security mode: WPA2 Personal</li>
-<li>Encryption: AES</li>
-<li>Enable guest profile, do the same: WPA2 Personal and AES</li>
-</ul>
-<li><b>Part 3:</b> Configure Wireless Clients Network Security</li>
-<ul>
-<li>Connect to the wifi on the clients</li>
-<li>DHCP</li>
-<li>configure the IoT devices</li>
-</ul>
-<li><b>Part 4:</b> Verify Connectivity and Security Settings</li>
-<ul>
-<li>Test internet connectivity on the browser</li>
-<li>Secure interconnectivity between default & guest by disabling (on router level) the access netween them</li>
-</ul>
-</ul>
 
-<h3>Authentication</h3>
+- **Part 1:** Configure Basic Security Settings for a Wireless Router
 
-<h4>Types:</h4>
-<ul>
-<li>Open system authentication (less secure)</li>
-<li>Shared key authentication (more secure)</li>
-</ul>
+  - Change router's default admin password
+  - Disable remote management
 
-<h4>Protocols:</h4>
-<ul>
-<li>Extensible Authentication Protocol (EAP)</li>
+- **Part 2:** Configure Wireless Router Network Security
+
+  - Enable SSID broadcast
+  - Change the SSID name
+  - Security mode: WPA2 Personal
+  - Encryption: AES
+  - Enable guest profile, do the same: WPA2 Personal and AES
+
+- **Part 3:** Configure Wireless Clients Network Security
+
+  - Connect to the wifi on the clients
+  - DHCP
+  - configure the IoT devices
+
+- **Part 4:** Verify Connectivity and Security Settings
+
+  - Test internet connectivity on the browser
+  - Secure interconnectivity between default & guest by disabling (on router level) the access between them
+
+
+### Authentication
+
+#### Types:
+
+- Open system authentication (less secure)
+- Shared key authentication (more secure)
+
+
+#### Protocols:
+
+- Extensible Authentication Protocol (EAP)
 
 |                    | EAP-TLS | PEAP   | EAP-TTLS | EAP-FAST |
 | ------------------ | ------- | ------ | -------- | -------- |
@@ -235,34 +250,33 @@ Network between trusted and untrusted network.
 | Easy do implement? | hard    | medium | medium   | easy     |
 | Security           | high    | medium | medium   | medium   |
 
-</ul>
 
-<h4>Mutual Authentication</h4>
+#### Mutual Authentication
 
-<ul>
-<li>Prevent rogue access points with <b>mutual authentication</b></li>
-</ul>
 
-<h4>Communication Methods</h4>
+- Prevent rogue access points with **mutual authentication**
 
-<ul>
-<li>Wifi & bluetooth</li>
-<li>NFC</li>
-<li>IR</li>
-<li>USB</li>
-</ul>
 
-<h2 id="resilience">Cybersec Resilience</h2>
+#### Communication Methods
 
-<h3>High Availability</h3>
 
-<ul>
-<li>Eliminate <b>single points of failure</b></li>
-<li>Redundant stuff --> reliable crossover</li>
-<li>Active device and system monitoring</li>
-</ul>
+- Wifi & bluetooth
+- NFC
+- IR
+- USB
 
-<h3>The Five 9s</h3>
+
+## Cybersec Resilience
+
+### High Availability
+
+
+- Eliminate **single points of failure**
+- Redundant stuff --> reliable crossover
+- Active device and system monitoring
+
+
+### The Five 9s
 
 
 
